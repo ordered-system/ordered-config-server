@@ -6,6 +6,9 @@ spring:
   cloud:
     config:
       server:
+        overrides:
+          app.jwt.secret: ${JWT_SECRET}
+          ordered.gateway.security.jwt-secret: ${JWT_SECRET}
         native:
           search-locations: classpath:/config-repo/
 
